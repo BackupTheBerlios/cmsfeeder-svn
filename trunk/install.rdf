@@ -16,10 +16,10 @@ xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 		<em:updateURL>http://cmsfeeder.berlios.com/update.rdf</em:updateURL>
 		<em:file>
 			<Description about="urn:mozilla:extension:file:cmsfeeder.jar">
-				<em:package>content/cmsfeeder/</em:package>
-				<em:locale>locale/en-US/cmsfeeder/</em:locale>
-				<em:locale>locale/fr-FR/cmsfeeder/</em:locale>
-				<em:skin>skin/classic/cmsfeeder/</em:skin>
+				<em:package>content/</em:package>
+				<em:locale>locale/en-US/</em:locale>
+				<em:locale>locale/fr-FR/</em:locale>
+				<em:skin>skin/classic/</em:skin>
 			</Description>
 		</em:file>
 

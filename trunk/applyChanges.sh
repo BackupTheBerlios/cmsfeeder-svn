@@ -7,5 +7,6 @@ repTest=/root/.mozilla/firefox/test.q9p/extensions/{1a106bdc-804e-4bea-a011-6893
 cd $repTravail/chrome
 zip -r $nomExtension.jar *
 cp -f $repTravail/install.rdf $repTest
+cp -f $repTravail/install.js $repTest
 mv -f $repTravail/chrome/$nomExtension.jar $repTest/chrome
 

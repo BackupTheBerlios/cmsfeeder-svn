@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://communicator/skin/bookmarks/bookmarksWindow.css" type="text/css"?>
+<?xml-stylesheet href="chrome://browser/skin/bookmarks/bookmarksManager.css" type="text/css"?>
+<?xml-stylesheet href="chrome://cmsfeeder/content/editor.css" type="text/css"?>
+
+<!DOCTYPE window [
+	<!ENTITY % nsDTD SYSTEM "chrome://cmsfeeder/locale/needlesearch.dtd" >
+	%nsDTD;
+	<!ENTITY % bmDTD SYSTEM "chrome://browser/locale/bookmarks/bookmarks.dtd" >
+	%bmDTD;
+]>
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	windowtype="bookmarks:manager"
+      onload="editor.init();"
+      id="needlesearch-bookmark-window"
+      headertitle="&needlesearch.brandname; &needlesearch.toolbar;"
+      buttons="accept"
+      ondialogaccept="editor.close()"
+      title="&needlesearch.brandname; &needlesearch.editor;">
+	
+	<script type="application/x-javascript" src="editor.js"/>
+	<script type="application/x-javascript" src="chrome://browser/content/bookmarks/bookmarks.js"/>
+	
+    <stringbundleset id="stringbundleset">
+        <stringbundle id="needlesearch_properties" src="chrome://cmsfeeder/locale/needlesearch.properties"/>
+    </stringbundleset>
+    
+    <command id="cmd_ns_newbookmark"    oncommand="editor.add('item');"/>
+   <command id="cmd_ns_newseparator" oncommand="editor.add('separator');"/>
+   <command id="cmd_ns_delete" oncommand="editor.remove()"/>
+    <command id="cmd_ns_properties" oncommand="editor.openProperties();"/>
+    <command id="cmd_ns_import" oncommand="editor.f_import();"/>
+    <command id="cmd_ns_export" oncommand="editor.f_export();"/>
+    <command id="cmd_close" oncommand="editor.close();"/>
+    
+    <toolbox id="bookmarks-toolbox">
+	<menubar id="main-menubar">
+	  <menu label="&needlesearch.fileMenu.label;" >
+		<menupopup>
+		  <menuitem label="&menuitem.newBookmark.label;" commmand="cmd_ns_newbookmark"/>
+		  <menuitem label="&menuitem.newSeparator.label;" command="cmd_ns_newseparator"/>
+		  <menuseparator/>
+		  <menuitem label="&menuitem.import.label;" command="cmd_ns_import"/>
+		  <menuitem label="&menuitem.export.label;" command="cmd_ns_export"/>
+		  <menuseparator/>
+		  <menuitem label="&closeCmd.label;" command="cmd_close"/>
+		</menupopup>
+	  </menu>
+	</menubar>
+    	<toolbar id="command-toolbar" tbalign="stretch">
+		<toolbarbutton id="newbookmark" label="&nseditor.additem;" command="cmd_ns_newbookmark"/>
+		<toolbarbutton id="newseparator" label="&nseditor.addseparator;" command="cmd_ns_newseparator"/>
+		<toolbarseparator/>
+		<toolbarbutton id="delete" label="&nseditor.removeitem;" command="cmd_ns_delete"/>
+		<toolbarbutton id="properties" label="Properties" command="cmd_ns_properties"/>
+	</toolbar>
+</toolbox>
+    
+    <vbox>        
+       <hbox flex="1">
+         <listbox rows="20" id="needlesearch-editor-list"
+		onfocus="editor.redraw()"
+		onselect="editor.redraw()"
+		ondblclick="editor.openProperties()" 
+		editable="true" 
+		allowevents="true" 
+		flex="1"
+		datasources="rdf:null"
+		ref="urn:cmsfeeder:ListeSites">
+                <template>
+                      <rule>
+		<conditions>
+			<content uri="?list"/>
+			<member container="?list" child="?cms"/>
+			<triple subject="?cms" predicate="http://cmsfeeder.berlios.com/test#type" object="separator"/>
+		</conditions>
+		<action>
+			<listitem uri="?cms" label="---------" type="separator"/>
+		</action>
+                            </rule>
+                          <rule>
+                              <conditions>
+                                  <content uri="?list"/>
+                                  <member container="?list" child="?cms"/>
+                                  <triple subject="?cms" predicate="http://cmsfeeder.berlios.com/test#type" object="item"/>
+                              </conditions>
+                              <bindings>
+                                  <binding subject="?cms"
+		      predicate="http://cmsfeeder.berlios.com/test#address"
+		      object="?address"/>
+                                  <binding subject="?cms"
+		      predicate="http://cmsfeeder.berlios.com/test#typecms"
+		      object="?typecms"/>
+                                  <binding subject="?cms"
+		      predicate="http://cmsfeeder.berlios.com/test#login"
+		      object="?login"/>
+                                  <binding subject="?cms"
+		      predicate="http://cmsfeeder.berlios.com/test#password"
+		      object="?password"/>
+                              </bindings>
+                                <action>
+                                    <listitem uri="?cms"
+			type="item"
+			address="?address"
+			label="?address" 
+			typecms="?typecms" 
+			login="?login" 
+			password="?password"/>
+                                </action>
+                           </rule>
+                      </template>
+         </listbox>
+         <vbox>
+           <spacer flex="1"/>
+           <button label="&nseditor.up;" class="up" oncommand="editor.move(-1);" id="up"/>
+           <button label="&nseditor.down;" class="down" oncommand="editor.move(1);" id="down"/>
+           <spacer flex="1"/>
+         </vbox>
+       </hbox>          
+    </vbox>
+</window>

@@ -1,0 +1,5 @@
+#needlesearch-bookmark-window toolbarbutton {
+  list-style-image: url("chrome://browser/skin/bookmarks/Bookmarks-toolbar.png");
+  -moz-box-orient: vertical;
+  padding: 6px !important;
+}

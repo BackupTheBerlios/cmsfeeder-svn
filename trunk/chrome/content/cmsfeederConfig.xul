@@ -1,0 +1,33 @@
+﻿<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE page SYSTEM "chrome://cmsfeeder/locale/cmsfeeder.dtd">
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" align="vertical" onload="init()">
+<script type="application/x-javascript" src="chrome://jslib/content/jslib.js" />
+<script type="application/x-javascript" src="chrome://cmsfeeder/content/cmsfeederConfig.js" />
+<description>Sites configurés</description>
+<tree id="sitesBox" datasources="rdf:null" ref="ListeSites" flex="1">
+
+  <treecols>
+    <treecol id="namie" label="Namfe" primary="true" flex="1"/>
+  </treecols>
+
+  <template>
+    <treechildren>
+      <treeitem uri="rdf:*">
+        <treerow>
+          <treecell label="rdf:http://cmsfeeder.berlios.com/test#address"/>
+        </treerow>
+      </treeitem>
+    </treechildren>
+  </template>
+</tree>
+<button onclick="showSiteProperties()" label="&sites.edit;" />
+<vbox id="siteDetails">
+<groupbox>
+<description value="Ici il y aura la description du site"></description>
+</groupbox>
+</vbox>
+</window>

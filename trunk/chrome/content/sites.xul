@@ -5,10 +5,16 @@
 <!DOCTYPE page SYSTEM "chrome://cmsfeeder/locale/cmsfeeder.dtd">
 
 <window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" align="vertical">
+<description>Sites configurés</description>
 <vbox datasources="sites.rdf" ref="ListeSites">
   <template>
-    <label uri="rdf:*" value="rdf:http://cmsfeeder.berlios.com/test#address"/>
-    <button onclick="showDialogSiteProperties()" label="&sites.test;" /><text value="&sites.edit;" />
+	<hbox uri="rdf:*">
+		<label value="rdf:http://cmsfeeder.berlios.com/test#address"/>
+		<button onclick="showSiteProperties()" label="&sites.edit;" />
+	</hbox>
   </template>
+</vbox>
+<vbox id="siteDetails">
+<description>Ici il y aura la description du site</description>
 </vbox>
 </window>

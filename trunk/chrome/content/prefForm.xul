@@ -11,7 +11,7 @@
     </tabs>
     <tabpanels  flex="1">
        <tabpanel flex="1"><iframe flex="1" src="chrome://cmsfeeder/content/sites.xul" id="sites"/></tabpanel>
-       <tabpanel flex="1"><description>Voici une longue phrase qui hélas ne revient pas à la ligne et cela me gène énormément parce que selon le bouquin elle devrait. Peut-être est-ce du à l'utilisation d'une iframe ?  non </description></tabpanel>
+       <tabpanel flex="1" orient="vertical"><description>Voici une longue phrase qui hélas ne revient pas à la ligne et cela me gène énormément parce que selon le bouquin elle devrait. Peut-être est-ce du à l'utilisation d'une iframe ?  non </description></tabpanel>
        <tabpanel flex="1"><iframe flex="1" src="chrome://cmsfeeder/content/about.xul" id="about"/></tabpanel>
     </tabpanels>
   </tabbox>

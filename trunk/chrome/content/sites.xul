@@ -4,9 +4,11 @@
 
 <!DOCTYPE page SYSTEM "chrome://cmsfeeder/locale/cmsfeeder.dtd">
 
-<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" align="vertical">
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" align="vertical" onload="init()">
+<script type="application/x-javascript" src="chrome://jslib/content/jslib.js" />
+<script type="application/x-javascript" src="chrome://cmsfeeder/content/cmsfeederConfig.js" />
 <description>Sites configurés</description>
-<vbox datasources="sites.rdf" ref="ListeSites">
+<vbox id="sitesBox" datasources="rdf:null" ref="ListeSites">
   <template>
 	<hbox uri="rdf:*">
 		<label value="rdf:http://cmsfeeder.berlios.com/test#address"/>
@@ -14,7 +16,10 @@
 	</hbox>
   </template>
 </vbox>
+<button onclick="showSiteProperties()" label="&sites.edit;" />
 <vbox id="siteDetails">
-<description>Ici il y aura la description du site</description>
+<groupbox>
+<description value="Ici il y aura la description du site"></description>
+</groupbox>
 </vbox>
 </window>

@@ -1,14 +1,11 @@
-<?xml version="1.0"?>
-<!DOCTYPE window [
-	<!ENTITY % sitesDTD SYSTEM "chrome://cmsfeeder/locale/sites.dtd">
-	%sitesDTD;
-]>
+﻿<?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://cmsfeeder/locale/sites.dtd">
 <window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" align="vertical">
 <vbox datasources="sites.rdf" ref="ListeSites">
   <template>
     <label uri="rdf:*" value="rdf:http://cmsfeeder.berlios.com/test#address"/>
-    <button onclick="showDialogSiteProperties()" label="dqsf" /><text value="&sites.edit" />
+    <button onclick="showDialogSiteProperties()" label="&sites.test;" /><text value="&sites.edit;" />
   </template>
 </vbox>
 </window>

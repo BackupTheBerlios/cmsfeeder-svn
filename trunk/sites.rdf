@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<RDF xmlns:Cmsfeeder="http://cmsfeeder.berlios.com/test#" xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+<Description id="ListeSites">
+	 <Seq about="yoyo">
+		<li resource="Monblog" />
+		<li resource="Monsite" />
+	 </Seq>
+ </Description>
+<Description about="Monblog">
+	<Cmsfeeder:address>http://www.monsite.com/monblog/</Cmsfeeder:address>
+	<Cmsfeeder:typecms>dotclear</Cmsfeeder:typecms>
+	<Cmsfeeder:login>henri</Cmsfeeder:login>
+	<Cmsfeeder:password>no!gl!CC</Cmsfeeder:password>
+</Description>
+<Description about="Monsite">
+	<Cmsfeeder:address>http://www.monsite.com/</Cmsfeeder:address>
+	<Cmsfeeder:typecms>SPIP</Cmsfeeder:typecms>
+	<Cmsfeeder:login>henri.bourcereau@gmail.com</Cmsfeeder:login>
+	<Cmsfeeder:password>no!gl!CC</Cmsfeeder:password>
+</Description>
+</rdf:RDF>   

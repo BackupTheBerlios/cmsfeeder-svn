@@ -1,2 +1,5 @@
 <!ENTITY sites.edit "Edit">
 <!ENTITY sites.test "the test">
+<!ENTITY prefform.sites "Sites">
+<!ENTITY prefform.coucou "cockeldoldoo">
+<!ENTITY prefform.alea "dice">

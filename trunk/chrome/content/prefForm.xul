@@ -1,7 +1,18 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://communicator/skin/" type="text/css"?>
-
+<!DOCTYPE page SYSTEM "chrome://cmsfeeder/locale/cmsfeeder.dtd">
 
 <page xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" headertitle="CmsFeeder">
-
+  <tabbox flex="1">
+    <tabs >
+       <tab label="&prefform.sites;"     />
+       <tab label="&prefform.coucou;"         />
+       <tab label="&prefform.alea;" />
+    </tabs>
+    <tabpanels  flex="1">
+       <tabpanel flex="1"><iframe flex="1" src="chrome://cmsfeeder/content/sites.xul" id="sites"/></tabpanel>
+       <tabpanel flex="1"><description>Voici une longue phrase qui hélas ne revient pas à la ligne et cela me gène énormément parce que selon le bouquin elle devrait. Peut-être est-ce du à l'utilisation d'une iframe ?  non </description></tabpanel>
+       <tabpanel flex="1"><iframe flex="1" src="chrome://cmsfeeder/content/about.xul" id="about"/></tabpanel>
+    </tabpanels>
+  </tabbox>
 </page>

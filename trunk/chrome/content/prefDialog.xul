@@ -1,0 +1,13 @@
+<?xml version="1.0"?> 
+<?xml-stylesheet href="chrome://communicator/skin/" type="text/css"?>
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+      buttons="help,accept,cancel"
+      width="600" height="550"
+      ondialogaccept="document.getElementById('dsPrefForm').contentDocument.defaultView.SaveSettings()"
+	  ondialoghelp="window.open('http://cmsfeeder.berlios.de/help.html','_blank')"
+      title="CmsFeeder">
+
+	  <iframe flex="1" src="chrome://cmsfeeder/content/prefForm.xul" id="dsPrefForm"/>
+
+</dialog>

@@ -13,6 +13,7 @@ xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 		<em:homepageURL>http://cmsfeeder.berlios.de/</em:homepageURL>
 		<em:iconURL>chrome://cmsfeeder/skin/cmsfeeder.png</em:iconURL>
 		<em:aboutURL>chrome://cmsfeeder/content/about.xul</em:aboutURL>
+		<em:optionsURL>chrome://cmsfeeder/content/prefDialog.xul</em:optionsURL>
 		<em:updateURL>http://cmsfeeder.berlios.com/update.rdf</em:updateURL>
 		<em:file>
 			<Description about="urn:mozilla:extension:file:cmsfeeder.jar">
